@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
-import com.example.taskpivot.R
 import com.example.todoapp.modules.HomeScreen
 import com.example.todoapp.modules.OnboardingScreen01
 

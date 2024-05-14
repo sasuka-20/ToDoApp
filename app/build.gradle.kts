@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.taskpivot"
+    namespace = "com.example.todoapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.taskpivot"
+        applicationId = "com.example.todoapp"
         minSdk = 33
         targetSdk = 34
         versionCode = 1

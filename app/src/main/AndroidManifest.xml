@@ -13,13 +13,13 @@
         android:theme="@style/Theme.ToDoApp"
         tools:targetApi="31">
         <activity
-            android:name="com.example.todoapp.modules.HomeScreen"
+            android:name=".modules.AddNewTaskScreen"
             android:exported="false" />
         <activity
-            android:name="com.example.todoapp.modules.MainActivity"
+            android:name=".modules.HomeScreen"
             android:exported="false" />
         <activity
-            android:name="com.example.todoapp.modules.OnboardingScreen01"
+            android:name=".modules.OnboardingScreen01"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
