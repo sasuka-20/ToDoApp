@@ -2,10 +2,14 @@ package com.example.todoapp.modules
 
 import Task
 import TaskViewModel
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.todoapp.R
@@ -17,6 +21,7 @@ class EditTaskScreen : AppCompatActivity() {
     private lateinit var binding: ActivityEditBinding
     private var taskId : Int = -1
     private lateinit var taskViewModel: TaskViewModel
+    private var confirmationDialog: Dialog? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +47,10 @@ class EditTaskScreen : AppCompatActivity() {
             saveEditedTask()
         }
 
+        binding.deleteBtn.setOnClickListener {
+            showConformation()
+        }
+
     }
 
     private fun saveEditedTask(){
@@ -65,5 +74,36 @@ class EditTaskScreen : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Failed to update task", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        confirmationDialog?.dismiss()
+    }
+
+    private fun showConformation() {
+        val dialog = Dialog(this, R.style.CustomDialogTheme)
+        confirmationDialog = dialog
+        dialog.setContentView(R.layout.delete_confromation_popup)
+
+        val cancel_btn : Button = dialog.findViewById(R.id.cancel_btn)
+
+        cancel_btn.setOnClickListener{
+            dialog.hide()
+        }
+
+        val ok_btn : Button = dialog.findViewById(R.id.ok_btn)
+
+        ok_btn.setOnClickListener{
+            taskViewModel.deleteTask(taskId)
+            val intent = Intent(this, HomeScreen::class.java)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+            startActivity(intent)
+            finish()
+        }
+
+
+        dialog.show()
     }
 }
