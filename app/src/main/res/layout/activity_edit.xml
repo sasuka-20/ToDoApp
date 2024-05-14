@@ -7,41 +7,88 @@
     android:background="#BD9C9E"
     tools:context=".Edit">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="179dp"
-        android:layout_height="31dp"
-        android:fontFamily="@font/jua"
-        android:text="Edit notes.."
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
-
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/delete_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
         app:srcCompat="@drawable/delete_btn" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/done_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
+        app:srcCompat="@drawable/done_btn" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867"
-        app:srcCompat="@drawable/add_btn" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="60dp"
+            android:background="@drawable/input_bg"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+
+            <EditText
+                android:id="@+id/task_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/hint_title_txt"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="230dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/description_bg"
+            android:gravity="top|center_vertical"
+            android:padding="15dp">
+
+            <EditText
+                android:id="@+id/task_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/description_hint_txt"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="169dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/jua"
+        android:text="Edit notes.."
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
