@@ -13,7 +13,7 @@ import com.example.taskpivot.adapter.TaskAdapter
 import com.example.todoapp.R
 import com.example.todoapp.databinding.ActivityHomeBinding
 
-class HomeScreen : AppCompatActivity(), TaskAdapter.OnTaskClickListener {
+class HomeScreen : AppCompatActivity(){
     private lateinit var binding: ActivityHomeBinding
 
     private lateinit var taskViewModel: TaskViewModel
@@ -60,12 +60,6 @@ class HomeScreen : AppCompatActivity(), TaskAdapter.OnTaskClickListener {
             binding.emptyView.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
         }
-    }
-
-    override fun onTaskClick(taskId: Int) {
-        val intent = Intent(this,EditTaskScreen::class.java)
-        intent.putExtra("taskId", taskId)
-        startActivity(intent)
     }
 
 
