@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BD9C9E"
-    tools:context=".Home">
+    tools:context=".modules.HomeScreen">
 
     <TextView
         android:id="@+id/textView4"

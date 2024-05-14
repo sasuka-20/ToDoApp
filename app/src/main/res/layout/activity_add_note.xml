@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BD9C9E"
-    tools:context=".Add_note">
+    tools:context=".modules.AddNewTaskScreen">
 
     <TextView
         android:id="@+id/textView4"
@@ -54,6 +54,7 @@
                 android:ems="10"
                 android:hint="@string/hint_title_txt"
                 android:inputType="text"
+                android:minHeight="48dp"
                 android:textSize="20sp" />
         </RelativeLayout>
 
@@ -75,6 +76,7 @@
                 android:gravity="start|top"
                 android:hint="@string/description_hint_txt"
                 android:inputType="textMultiLine"
+                android:minHeight="48dp"
                 android:textSize="20sp" />
         </RelativeLayout>
     </LinearLayout>
