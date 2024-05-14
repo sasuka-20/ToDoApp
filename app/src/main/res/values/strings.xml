@@ -2,4 +2,8 @@
     <string name="app_name">Taskify</string>
     <string name="hint_title_txt">Enter the title</string>
     <string name="description_hint_txt">Enter the description</string>
+    <string name="card_description_sample">Take 3 minutes to practice deep breathing exercises, focusing on each inhale and exhale to promote relaxation and mental clarity.</string>
+    <string name="sample_title">Mindful Breathing:</string>
+    <string name="recent_task_title">No Recent Tasks</string>
+    <string name="no_recent_task_content">Tap Add New button for navigate to add new task page</string>
 </resources>
