@@ -5,6 +5,8 @@ import TaskViewModel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,7 +43,15 @@ class HomeScreen : AppCompatActivity(){
         // Pass the activity as a listener to the adapter
         updateUI(tasks)
 
+        binding.searchTxt.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                filterTasks(s.toString())
+            }
+        })
     }
     private fun updateUI(tasks: List<Task>) {
 
@@ -60,6 +70,13 @@ class HomeScreen : AppCompatActivity(){
             binding.emptyView.visibility = View.GONE
             binding.recyclerView.visibility = View.VISIBLE
         }
+    }
+
+    private fun filterTasks(query: String) {
+        val filteredTasks = tasks.filter {
+            it.taskTitle.contains(query, ignoreCase = true) || it.taskDescription.contains(query, ignoreCase = true)
+        }
+        taskAdapter.updateTasks(filteredTasks)
     }
 
 
